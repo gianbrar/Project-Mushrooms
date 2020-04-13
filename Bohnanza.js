@@ -73,7 +73,7 @@ function display1stPersonHand(handToDisplay, cardScale, angleX, rotation){
     for(let cardDisplayIndex = 0; cardDisplayIndex < handToDisplay.length; cardDisplayIndex++){
         magnitude = (cardDisplayIndex === rotation.index) * rotation.magnitude;
         texture(handToDisplay[cardDisplayIndex].texture);
-        translate((-400 + (350 * (handToDisplay.lenth^2) / (handToDisplay.length + 1)) + (700 * cardDisplayIndex / (handToDisplay.length))) * cardScale, 300, 200);
+        translate(( (700 * cardDisplayIndex / handToDisplay.length) - ((350 / handToDisplay.length) * (handToDisplay.length - 1)) ) * cardScale, 300, 200);
         
         rotateX(angleX + sin(rotation.angle) * magnitude);
         rotateY(cos(rotation.angle) * magnitude);
@@ -83,6 +83,6 @@ function display1stPersonHand(handToDisplay, cardScale, angleX, rotation){
         rotateY(-cos(rotation.angle) * magnitude);
         rotateX(-angleX - sin(rotation.angle) * magnitude);
         
-        translate((400 - (350 * (handToDisplay.length^2) / (handToDisplay.length + 1)) - (700 * cardDisplayIndex / (handToDisplay.length))) * cardScale, -300, -200)
+        translate(( (700 * cardDisplayIndex / handToDisplay.length) - ((350 / handToDisplay.length) * (handToDisplay.length - 1)) ) * -cardScale, -300, -200)
     }
 }
