@@ -1,0 +1,66 @@
+@import url(//db.onlinewebfonts.com/c/6a9c6944fe8451dd397fe9d0763a4c88?family=OCR+A+Std);
+h1 {
+  text-align: center;
+  padding: 0;
+  color: palegreen;
+  font-family: "OCR A Std";
+}
+
+p {
+  color: palegreen;
+  font-family: "OCR A Std";
+}
+
+p.asterisk {
+    color: orangered;
+    font-family: "OCR A Std";
+}
+
+p.bottomPage {
+    color: orangered; /* See below comment */
+    text-align: left; /* Create new class and change as necessary. */
+    vertical-align: text-bottom;
+}
+
+div.slide-left {
+  width:100%;
+  overflow:hidden;
+}
+div.slide-left h3 {
+  animation: slide-left .5s;
+}
+
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+body {background-color: seagreen;}
+
+h3 {
+  color: palegreen;
+  font-family: "OCR A Std";
+}
