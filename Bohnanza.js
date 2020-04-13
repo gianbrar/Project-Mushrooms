@@ -79,6 +79,6 @@ function draw() {
 function display1stPersonHand(handToDisplay){
     for(let cardDisplayIndex = 0; cardDisplayIndex < handToDisplay.length; cardDisplayIndex++){
         texture(handToDisplay[cardDisplayIndex].texture);
-        quad(200, 200, 200, 400, 200, 200, 400, 400, 200, 200, 400, 200);
+        quad(200, 200, 200,  400, 200, 200,  400, 350, 250,  200, 350, 250);
     }
 }
