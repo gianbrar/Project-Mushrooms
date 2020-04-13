@@ -1,5 +1,10 @@
 let rotator = -3;
 let randomIncrementor = 0;
+
+let everythingScale;
+
+let yscale;
+
 let beanTypes = {
     coffee:{
     },
@@ -54,9 +59,13 @@ function setup() {
     textAlign(CENTER, CENTER);
     createCanvas(windowWidth, windowHeight, WEBGL);
     frameRate(30);
+    everythingScale = width / 1920;
+    yscale = height / (everythingScale * 1080);
 }
 
 function draw() {
+    console.log(everythingScale);
+    scale(everythingScale);
     strokeWeight(2);
     background(255);
     stroke(0, 0, 0);
@@ -74,7 +83,7 @@ function display1stPersonHand(handToDisplay, cardScale, angleX, rotation){
     for(let cardDisplayIndex = 0; cardDisplayIndex < handToDisplay.length; cardDisplayIndex++){
         magnitude = (cardDisplayIndex === rotation.index) * rotation.magnitude;
         texture(handToDisplay[cardDisplayIndex].texture);
-        translate(( (700 * cardDisplayIndex / handToDisplay.length) - ((350 / handToDisplay.length) * (handToDisplay.length - 1)) ) * cardScale, 300, 200);
+        translate(( (700 * cardDisplayIndex / handToDisplay.length) - ((350 / handToDisplay.length) * (handToDisplay.length - 1)) ) * cardScale, 300 * yscale, 200);
         
         rotateX(angleX + sin(rotation.angle) * magnitude);
         rotateY(cos(rotation.angle) * magnitude);
@@ -84,6 +93,6 @@ function display1stPersonHand(handToDisplay, cardScale, angleX, rotation){
         rotateY(-cos(rotation.angle) * magnitude);
         rotateX(-angleX - sin(rotation.angle) * magnitude);
         
-        translate(( (700 * cardDisplayIndex / handToDisplay.length) - ((350 / handToDisplay.length) * (handToDisplay.length - 1)) ) * -cardScale, -300, -200)
+        translate(( (700 * cardDisplayIndex / handToDisplay.length) - ((350 / handToDisplay.length) * (handToDisplay.length - 1)) ) * -cardScale, -300 * yscale, -200);
     }
 }
