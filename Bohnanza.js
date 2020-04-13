@@ -37,17 +37,17 @@ const debugFunctions = {
 }
 
 function preload(){
-    beanTypes.coffee.texture = loadImage("/Bohnanza Low-Quality Card Assets/coffee.png");
-    beanTypes.wax.texture = loadImage("/Bohnanza Low-Quality Card Assets/wax.png");
-    beanTypes.blue.texture = loadImage("/Bohnanza Low-Quality Card Assets/blue.png");
-    beanTypes.chili.texture = loadImage("/Bohnanza Low-Quality Card Assets/chili.png");
-    beanTypes.stink.texture = loadImage("/Bohnanza Low-Quality Card Assets/stink.png");
-    beanTypes.green.texture = loadImage("/Bohnanza Low-Quality Card Assets/green.png");
-    beanTypes.soy.texture = loadImage("/Bohnanza Low-Quality Card Assets/soy.png");
-    beanTypes.black.texture = loadImage("/Bohnanza Low-Quality Card Assets/black.png");
-    beanTypes.red.texture = loadImage("/Bohnanza Low-Quality Card Assets/red.png");
+    beanTypes.coffee.texture = loadImage("/BohnanzaLow-QualityCardAssets/coffee.png");
+    beanTypes.wax.texture = loadImage("/BohnanzaLow-QualityCardAssets/wax.png");
+    beanTypes.blue.texture = loadImage("/BohnanzaLow-QualityCardAssets/blue.png");
+    beanTypes.chili.texture = loadImage("/BohnanzaLow-QualityCardAssets/chili.png");
+    beanTypes.stink.texture = loadImage("/BohnanzaLow-QualityCardAssets/stink.png");
+    beanTypes.green.texture = loadImage("/BohnanzaLow-QualityCardAssets/green.png");
+    beanTypes.soy.texture = loadImage("/BohnanzaLow-QualityCardAssets/soy.png");
+    beanTypes.black.texture = loadImage("/BohnanzaLow-QualityCardAssets/black.png");
+    beanTypes.red.texture = loadImage("/BohnanzaLow-QualityCardAssets/red.png");
     //beanTypes.garden.texture = loadImage("/Bohnanza Low-Quality Card Assets/garden.png");
-    beanTypes.cocoa.texture = loadImage("/Bohnanza Low-Quality Card Assets/cocoa.png");
+    beanTypes.cocoa.texture = loadImage("/BohnanzaLow-QualityCardAssets/cocoa.png");
 }
 
 function setup() {
