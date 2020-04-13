@@ -83,6 +83,6 @@ function display1stPersonHand(handToDisplay, cardScale, angleX, rotation){
         rotateY(-cos(rotation.angle) * magnitude);
         rotateX(-angleX - sin(rotation.angle) * magnitude);
         
-        translate((400 - (350 * (handToDisplay.lenth^2) / (handToDisplay.length + 1)) - (700 * cardDisplayIndex / (handToDisplay.length))) * cardScale, -300, -200)
+        translate((400 - (350 * (handToDisplay.length^2) / (handToDisplay.length + 1)) - (700 * cardDisplayIndex / (handToDisplay.length))) * cardScale, -300, -200)
     }
 }
