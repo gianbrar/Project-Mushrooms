@@ -63,26 +63,26 @@ function draw() {
     //rotateY(randomIncrementor/10+1);
     ambientLight(255,255,255);
     debugFunctions.drawAxis();
-    display1stPersonHand([beanTypes.coffee, beanTypes.wax, beanTypes.blue, beanTypes.chili, beanTypes.stink], -rotator*0.1, {angle:randomIncrementor, magnitude:0.1, index:0});
+    display1stPersonHand([beanTypes.coffee, beanTypes.wax, beanTypes.blue, beanTypes.chili, beanTypes.stink], 1.7, -rotator*0.1, {angle:randomIncrementor, magnitude:0.1, index:0});
     randomIncrementor+=0.1;
 }
 
 
 
-function display1stPersonHand(handToDisplay, angleX, rotation){
+function display1stPersonHand(handToDisplay, cardScale, angleX, rotation){
     for(let cardDisplayIndex = 0; cardDisplayIndex < handToDisplay.length; cardDisplayIndex++){
         magnitude = (cardDisplayIndex === rotation.index) * rotation.magnitude;
         texture(handToDisplay[cardDisplayIndex].texture);
-        translate(-400 + (350 * (handToDisplay.lenth^2) / (handToDisplay.length + 1)) + (700 * cardDisplayIndex / (handToDisplay.length)), 300, 200);
+        translate((-400 + (350 * (handToDisplay.lenth^2) / (handToDisplay.length + 1)) + (700 * cardDisplayIndex / (handToDisplay.length))) * cardScale, 300, 200);
         
         rotateX(angleX + sin(rotation.angle) * magnitude);
         rotateY(cos(rotation.angle) * magnitude);
         
-        quad(-50, -70, 0,  50, -70, 0,  50, 70, 0,  -50, 70, 0);
+        quad(-50 * cardScale, -70 * cardScale, 0,  50 * cardScale, -70 * cardScale, 0,  50 * cardScale, 70 * cardScale, 0,  -50 * cardScale, 70 * cardScale, 0);
         
         rotateY(-cos(rotation.angle) * magnitude);
         rotateX(-angleX - sin(rotation.angle) * magnitude);
         
-        translate(400 - (350 * (handToDisplay.lenth^2) / (handToDisplay.length + 1)) - (700 * cardDisplayIndex / (handToDisplay.length)), -300, -200)
+        translate((400 - (350 * (handToDisplay.lenth^2) / (handToDisplay.length + 1)) - (700 * cardDisplayIndex / (handToDisplay.length))) * cardScale, -300, -200)
     }
 }
