@@ -1,37 +1,27 @@
 let rotator = -3;
+let randomIncrementor = 0;
 let beanTypes = {
     coffee:{
-        texture: 0
     },
     wax: {
-        texture: 0
     },
     blue: {
-        texture: 0
     },
     chili: {
-        texture: 0
     },
     stink: {
-        texture: 0
     },
     green: {
-        texture: 0
     },
     soy: {
-        texture: 0
     },
     black: {
-        texture: 0
     },
     red: {
-        texture: 0
     },
     garden: {
-        texture: 0
     },
     cocoa: {
-        texture: 0
     }
 }
 
@@ -70,15 +60,29 @@ function draw() {
     background(255);
     stroke(0, 0, 0);
     rotateX(rotator * 0.1);
+    //rotateY(randomIncrementor/10+1);
+    ambientLight(255,255,255);
     debugFunctions.drawAxis();
-    display1stPersonHand([beanTypes.coffee]);
+    display1stPersonHand([beanTypes.coffee, beanTypes.wax, beanTypes.blue, beanTypes.chili, beanTypes.stink], -rotator*0.1, {angle:randomIncrementor, magnitude:0.1, index:0});
+    randomIncrementor+=0.1;
 }
 
 
 
-function display1stPersonHand(handToDisplay){
+function display1stPersonHand(handToDisplay, angleX, rotation){
     for(let cardDisplayIndex = 0; cardDisplayIndex < handToDisplay.length; cardDisplayIndex++){
+        magnitude = (cardDisplayIndex === rotation.index) * rotation.magnitude;
         texture(handToDisplay[cardDisplayIndex].texture);
-        quad(200, 200, 200,  400, 200, 200,  400, 350, 250,  200, 350, 250);
+        translate(-400 + (350 * (handToDisplay.lenth^2) / (handToDisplay.length + 1)) + (700 * cardDisplayIndex / (handToDisplay.length)), 300, 200);
+        
+        rotateX(angleX + sin(rotation.angle) * magnitude);
+        rotateY(cos(rotation.angle) * magnitude);
+        
+        quad(-50, -70, 0,  50, -70, 0,  50, 70, 0,  -50, 70, 0);
+        
+        rotateY(-cos(rotation.angle) * magnitude);
+        rotateX(-angleX - sin(rotation.angle) * magnitude);
+        
+        translate(400 - (350 * (handToDisplay.lenth^2) / (handToDisplay.length + 1)) - (700 * cardDisplayIndex / (handToDisplay.length)), -300, -200)
     }
 }
