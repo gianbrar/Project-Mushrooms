@@ -53,6 +53,7 @@ function preload(){
 function setup() {
     textAlign(CENTER, CENTER);
     createCanvas(windowWidth, windowHeight, WEBGL);
+    frameRate(30);
 }
 
 function draw() {
@@ -60,9 +61,9 @@ function draw() {
     background(255);
     stroke(0, 0, 0);
     rotateX(rotator * 0.1);
+    debugFunctions.drawAxis();
     //rotateY(randomIncrementor/10+1);
     ambientLight(255,255,255);
-    debugFunctions.drawAxis();
     display1stPersonHand([beanTypes.coffee, beanTypes.wax, beanTypes.blue, beanTypes.chili, beanTypes.stink], 1.7, -rotator*0.1, {angle:randomIncrementor, magnitude:0.1, index:0});
     randomIncrementor+=0.1;
 }
