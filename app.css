@@ -8,6 +8,12 @@ h1 {
   font-family: "OCR A Std";
 }
 
+a {
+    text-align: center;
+    color: palegreen;
+    font-family: "OCR A Std";
+}
+
 p {
   color: palegreen;
   font-family: "OCR A Std";
